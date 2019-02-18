@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+@mobile: ~"all and (max-width: 768px)";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Ubuntu", "Arial", "sans-serif";
+    color: #ffffff;
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 20px;
+    li {
+        line-height: 1.5rem;
+    }
+    li:before {
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: -20px;
+        content: "●";
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+    &.anchor {
+        display: block;
+        position: relative;
+        top: -64px;
+        visibility: hidden;
+    }
+    &:visited {
+        color: #ffffff;
+    }
+}
+
+.inner {
+    padding: 40px 20px;
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.boxshadow {
+    -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.07);
+}
+
+#header {
+    padding: 1.25em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #132A6D;
+    -moz-transition: background-color 0.4s ease-in-out;
+    -webkit-transition: background-color 0.4s ease-in-out;
+    -ms-transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+    &.alt {
+        background-color: transparent;
+        h1 {
+            visibility: hidden;
+        }
+    }
+    h1 {
+        -moz-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        -ms-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        float: left;
+        visibility: visible;
+        font-size: 16px;
+        line-height: 1.5rem;
+    }
+    nav {
+        display: inline-block;
+        float: right;
+        ul > li {
+            display: inline-block;
+            padding-left: 1.5rem;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+#banner {
+    text-align: center;
+    padding: 56px 0 10vh 0;
+    height: 85vh;
+    min-height: 300px;
+    display: flex;
+    align-items: left;
+    position: relative;
+    .bg {
+        z-index: 200;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: -moz-linear-gradient(top, #22A7F0 0%, #1F3A93 100%);
+        background: -webkit-linear-gradient(top, #22A7F0 0%, #1F3A93 100%);
+        background: linear-gradient(to bottom, #22A7F0 0%, #1F3A93 100%);
+        transform: skewY(-7deg);
+        transform-origin: top left;
+    }
+    .inner {
+        position: relative;
+        z-index: 300;
+    }
+    h2 {
+        font-size: 36px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        margin-bottom: 20px;
+    }
+}
+
+.icons {
+    display: flex;
+    margin: 20px auto;
+    width: 180px;
+    justify-content: space-between;
+}
+
+#wrapper > section {
+    &.about {
+        background-color: #446CB3;
+        margin-top: -15vw;
+        padding-top: 15vw;
+        position: relative;
+    }
+    &.experience {
+        background-color: #3A539B;
+    }
+    &.projects {
+        background-color: #446CB3;
+    }
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.chevron-link {
+    text-decoration: none;
+    margin-top: 0.5rem;
+    &:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f054";
+        margin-left: 5px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    .tile {
+        -moz-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        -ms-transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        transition: opacity 0.4s ease-in-out, visibility 0.4s;
+        h3 {
+            font-size: 24px;
+            margin-bottom: 0.5rem;
+        }
+        .chevron-link {
+            float: right;
+        }
+    }
+    &.tiles-horizontal {
+        .tile {
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            width: 100%;
+            @media @mobile {
+                flex-wrap: wrap;
+            }
+            &.tile-reverse {
+                flex-direction: row-reverse;
+            }
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            .image {
+                flex: 0 0 250px;
+                @media @mobile {
+                    flex-basis: 100%;
+                }
+            }
+            .tile-content {
+                padding: 10px 20px;
+            }
+        }
+    }
+    &.tiles-vertical {
+        margin: 0 -20px;
+        .tile {
+            flex: 0 0 33.33%;
+            width: 33.33%;
+            flex-direction: column;
+            padding: 20px;
+            @media @mobile {
+                flex-basis: 100%;
+            }
+            .image {
+                width: 100%;
+                margin-bottom: 20px;
+                display: block;
+            }
+            h3 {
+                font-weight: normal;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .tile-content {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.tags {
+    font-size: 0;
+    .tag {
+        position: relative;
+        padding: 3px 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-top: 5px;
+        margin-right: 5px;
+        display: inline-block;
+        font-size: 14px;
+    }
+}
+
+#footer {
+    background-color: #132A6D;
+    text-align: center;
+}
