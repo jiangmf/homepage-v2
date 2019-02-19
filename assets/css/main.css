@@ -325,6 +325,10 @@ a:visited {
     display: block;
 }
 
+.tiles.tiles-vertical .tile .image:hover + .tile-content h3 a{
+    text-decoration: underline;
+}
+
 .tiles.tiles-vertical .tile h3 {
     font-weight: normal;
 }
