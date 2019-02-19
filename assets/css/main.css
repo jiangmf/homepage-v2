@@ -103,9 +103,15 @@ a:visited {
     justify-content: center;
 }
 
-#header img {
+#header .logo img {
     height: 24px;
     margin-right: 10px;
+}
+
+@media all and (max-width: 420px) {
+    #header .logo img {
+        display: none;
+    }
 }
 
 #header .logo h1 {
